@@ -3,7 +3,7 @@
 
 /* layout */
 :root {
-  --primary: #1a5eac;
+  --primary: #1aac83;
   --error: #e7195a;
 }
 body {
@@ -25,7 +25,6 @@ header .container {
 header a {
   color: #333;
   text-decoration: none;
-  
 }
 .pages{
   max-width: 1400px;
@@ -45,11 +44,7 @@ header a {
   margin: 20px auto;
   padding: 20px;
   position: relative;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-}
-.workout-details:hover {
-  transform: translateY(-5px);
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
 }
 .workout-details h4 {
   margin: 0 0 10px 0;
@@ -106,4 +101,20 @@ input.error {
   border: 1px solid var(--error);
 }
 
+/* navbar */
+nav {
+  display: flex;
+  align-items: center;
+}
+nav a {
+  margin-left: 10px;
+}
 
+/* auth forms */
+form.signup, form.Login {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 4px;
+}
