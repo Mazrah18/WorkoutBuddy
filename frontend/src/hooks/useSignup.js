@@ -1,41 +1,38 @@
-import { useState } from "react";
-import { useAuthContext } from  './useAuthContext'
 
-export const useSignup = () =>{
-    const [error, setError] = useState(null)
-    const [IsLoading, setIsLoading] = useState(null)
-    const {dispatch } = useAuthContext()
+import { useState } from 'react'
+import { useAuthContext } from './useAuthContext'
 
-    const signup = async (email,password) =>{
-        setIsLoading(true)
-        setError(null)
+export const useSignup = () => {
+  const [error, setError] = useState(null)
+  const [isLoading, setIsLoading] = useState(null)
+  const { dispatch } = useAuthContext()
 
-        const response = await fetch('https://workoutbuddy-3dqd.onrender.com/api/signup', {
-            method: 'POST',
-            headers:{
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                    email,
-                    password
-                })
-        })
-        
-       const json = await response.json()
+  const signup = async (email, password) => {
+    setIsLoading(true)
+    setError(null)
 
-    if(!response.ok) {
-        setIsLoading(false)
-        setError(json.error)
+    const response = await fetch('https://workoutbuddy-3dqd.onrender.com/api/user/signup', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({ email, password })
+    })
+    const json = await response.json()
+
+    if (!response.ok) {
+      setIsLoading(false)
+      setError(json.error)
     }
-    if(response.ok){
-        //save the user to local storage
-        localStorage.setItem('user', JSON.stringify(json))
+    if (response.ok) {
+      // save the user to local storage
+      localStorage.setItem('user', JSON.stringify(json))
 
-        //update Auth content
-        dispatch({type: 'LOGIN', payload: json})
+      // update the auth context
+      dispatch({type: 'LOGIN', payload: json})
 
-        setIsLoading(false)
+      // update loading state
+      setIsLoading(false)
     }
-}
-return { signup, IsLoading, error}
+  }
+
+  return { signup, isLoading, error }
 }
