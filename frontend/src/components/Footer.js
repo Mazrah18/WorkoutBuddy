@@ -22,8 +22,8 @@ const Footer = () => {
                 <div style={{ marginBottom: '10px', position: 'relative', zIndex: 2 }}>
                     <p style={{ fontSize: '12px' }}>
                         
-                        <a className='footer-links' href="https://github.com/Mazrah18" target="_blank" style={{  textDecoration: 'none', marginRight: '10px' }}><FontAwesomeIcon icon={faGithub } size='2x' style={{ marginRight: '5px' }} /></a>
-                        <a className='footer-links' href="https://parth-bhatt.netlify.app/" target="_blank" style={{  textDecoration: 'none' }}><FontAwesomeIcon icon={faExternalLinkAlt} size='2x' style={{ marginLeft: '5px' }} /></a>
+                        <a className='footer-links' href="https://github.com/Mazrah18" target="_blank" rel="noopener noreferrer" style={{  textDecoration: 'none', marginRight: '10px' }}><FontAwesomeIcon icon={faGithub } size='2x' style={{ marginRight: '5px' }} /></a>
+                        <a className='footer-links' href="https://parth-bhatt.netlify.app/" target="_blank" rel="noopener noreferrer"style={{  textDecoration: 'none' }}><FontAwesomeIcon icon={faExternalLinkAlt} size='2x' style={{ marginLeft: '5px' }} /></a>
                         
                     
                     </p>
