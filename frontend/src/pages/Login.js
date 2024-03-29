@@ -21,7 +21,7 @@ const Login = () =>{
                 value={email}
                 placeholder='name@company.com'
             />
-            <label>Password </label>
+            <label>Password:</label>
              <input 
                 type="password"
                 onChange={(e) => setPassword(e.target.value)}
