@@ -37,8 +37,8 @@ const Toggle = ( ) => {
         onClick={toggleTheme}
       />
       <label htmlFor="checkbox" className="checkbox-label">
+      <i className="fas fa-moon"></i>
         <i className="fas fa-sun"></i>
-        <i className="fas fa-moon"></i>
         <span className="ball"></span>
       </label>
     </div>
