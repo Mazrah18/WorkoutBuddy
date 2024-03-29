@@ -18,8 +18,8 @@ app.use((req, res, next) => {
 })
 
 // routes
-app.use(`${process.env.REACT_APP_BACKEND_URI}/api/workouts`, workoutRoutes)
-app.use(`${process.env.REACT_APP_BACKEND_URI}/api/user`, userRoutes)
+app.use('https://workoutbuddy-3dqd.onrender.com//api/workouts', workoutRoutes)
+app.use('https://workoutbuddy-3dqd.onrender.com//api/user', userRoutes)
 
 // connect to db
 mongoose.connect(process.env.MONGO_URI)

@@ -12,7 +12,7 @@ const WorkoutDetails = ({ workout }) => {
     if(!user){
       return
     }
-    const response = await fetch(`${process.env.REACT_APP_BACKEND_URI}/api/workouts/` + workout._id, {
+    const response = await fetch('https://workoutbuddy-3dqd.onrender.com//api/workouts/' + workout._id, {
       method: 'DELETE',
       headers:{
         'Authorization': `Bearer ${user.token}`
