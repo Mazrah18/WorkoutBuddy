@@ -13,21 +13,24 @@ const Login = () =>{
     }
     return(
         <form className="Login" onSubmit={handleSubmit}>
-            <h3>Login In</h3>
+            <h3 style={{textAlign: 'center'}}>Login In</h3>
             <label>Email address: </label>
             <input 
                 type="text"
                 onChange={(e) => setEmail(e.target.value)}
                 value={email}
+                placeholder='name@company.com'
             />
             <label>Password </label>
              <input 
                 type="password"
                 onChange={(e) => setPassword(e.target.value)}
                 value={password}
+                placeholder='••••••••'
             />
-
-        <button disabled={isLoading}>Log in</button>
+        <div className="fun">
+        <button  disabled={isLoading}>Log in</button>
+        </div>
         {error && <div className="error">{error}</div>}
         </form>
     )

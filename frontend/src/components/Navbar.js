@@ -1,22 +1,30 @@
 import { Link } from 'react-router-dom'
 import { useLogout } from '../hooks/useLogout'
 import { useAuthContext } from '../hooks/useAuthContext'
+import Toggle from './useToggle';
+import { useContext } from 'react';
+import { ThemeContext } from '../App';
 
 const Navbar = () => {
     const {logout}  = useLogout()
-    const {user} = useAuthContext()
+    const {user} = useAuthContext()  
+    const { theme } = useContext(ThemeContext);
+
     const handleClick = () =>{
       logout()
     }
+
   return (
-    <header>
-      <div className="container">
-        <Link to="/">
+    <header >
+      <div className="container " >
+        <Link className='header' to="/">
           <h1>Workout Mate</h1>
         </Link>
+
         <nav>
-          { user && (<div>
-            <span> {user.email}</span>
+        <Toggle toggleTheme={theme}/>
+          { user && (<div style={{display:'flex', flexDirection:'row'}}>
+            <span style={{padding: "20px"}}>Welcome {user.email.substring(0, user.email.indexOf('@'))}</span>
             <button onClick={handleClick}>
               Log out
             </button>
@@ -24,11 +32,11 @@ const Navbar = () => {
           )}
           {!user && (
         <div>
-        <Link to="/login">Login</Link>
-        <Link to="/signup">Signup</Link>
+        <Link className="Nav-item header" to="/login">Login</Link>
+        <Link className="Nav-item header" to="/signup">Signup</Link>
         </div>
           )}
-  
+
         </nav>
       </div>
     </header>
@@ -36,3 +44,4 @@ const Navbar = () => {
 }
 
 export default Navbar
+
