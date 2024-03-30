@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import { WorkoutsContextProvider } from './context/WorkoutsContext';
 import { AuthContextProvider } from './context/AuthContext';
+import './cron'
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
